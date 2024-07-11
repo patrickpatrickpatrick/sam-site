@@ -1,8 +1,8 @@
 module.exports = {
-	title: "Eleventy Base Blog v8",
+	title: "Sam's Zone",
 	url: "https://example.com/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "It's a webzone for Sam, he can write something else here.",
 	author: {
 		name: "Your Name Here",
 		email: "youremailaddress@example.com",
