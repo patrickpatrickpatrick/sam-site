@@ -1,22 +1,16 @@
 {
-    "homeDisplay":
-    [
-        "puffin.png"
-    ],
-    "images":
-    [
-        {
-            "name": "puffin.png",
-            "tags":
-            [
-                "black-and-white",
-                "bird"
-            ]
-        }
-    ],
-    "tags":
-    [
-        "black-and-white",
-        "bird"
-    ]
+  "images": {
+    "puffin.png": {
+      "tags": [
+          "black-and-white",
+          "bird",
+      ],
+      "homeDisplay": true
+    }
+  },
+  "tags":
+  [
+      "black-and-white",
+      "bird"
+  ]
 }
