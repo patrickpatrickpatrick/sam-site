@@ -1,16 +1,16 @@
 {
-    "images":
-    {
-        "puffin.png":
+    "images": [
         {
+            "name": "puffin.png",
             "homeDisplay": true,
             "tags":
             [
                 "black-and-white",
                 "bird"
-            ]
-        }
-    },
+            ],
+            "constructedTagString": "black-and-white,bird"
+        } 
+    ],
     "tags":
     [
         "black-and-white",
