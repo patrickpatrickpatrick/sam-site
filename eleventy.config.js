@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
 		const featuredImageJson = await featuredImageResponse.json();
 		const { images } = featuredImageJson;
 
-		return JSON.stringify(images);
+		return images;
 	});
 
 	// Return all the tags used in a collection

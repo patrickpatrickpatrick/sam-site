@@ -5,4 +5,9 @@ eleventyNavigation:
   order: 1
 ---
 
-{{ featuredImages }}
+{%- set images = featuredImages -%}
+
+{%- for image in images -%}
+  <img src="/img/{{ image.name }}" />
+{%- endfor -%}
+
