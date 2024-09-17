@@ -66,6 +66,14 @@ module.exports = function(eleventyConfig) {
 		return Math.min.apply(null, numbers);
 	});
 
+	eleventyConfig.addGlobalData("featuredImages", async () => {
+		const featuredImageResponse = await fetch('https://image-tagger-theta.vercel.app/api/images?=featured');
+		const featuredImageJson = await featuredImageResponse.json();
+		const { images } = featuredImageJson;
+
+		return JSON.stringify(images);
+	});
+
 	// Return all the tags used in a collection
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
