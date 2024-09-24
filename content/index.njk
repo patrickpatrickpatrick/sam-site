@@ -5,9 +5,16 @@ eleventyNavigation:
   order: 1
 ---
 
-{%- set images = featuredImages -%}
+<div>
+  <tag-filter tags="{{ tags | dump }}" target="image-grid">
+      {%- for tag in tags -%}
+        <a data-tag="{{ tag | dump }}" href="/images/{{ tag.tag }}">{{ tag.tag }}({{ tag.count }})</a>
+      {%- endfor -%}
+  </tag-filter>
 
-{%- for image in images -%}
-  <img src="/img/{{ image.name }}" />
-{%- endfor -%}
-
+  <filtered-image-grid id="image-grid" data-filter="">
+    {%- for image in featuredImages -%}
+      <img src="/img/{{ image.name }}" />
+    {%- endfor -%}
+  </filtered-image-grid>
+</div>
