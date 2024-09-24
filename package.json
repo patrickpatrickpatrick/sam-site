@@ -4,8 +4,8 @@
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"scripts": {
 		"build": "npm-run-all -p build:*",
-		"build:esbuild": "esbuild src/assets/js/*.js --bundle --outdir=_site/assets/js/",
 		"build:11ty": "npx @11ty/eleventy",
+		"build:esbuild": "esbuild src/assets/js/*.js --bundle --outdir=_site/assets/js/",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
 		"start": "npm-run-all -p start:*",
 		"start:11ty": "npx @11ty/eleventy --serve --quiet",
