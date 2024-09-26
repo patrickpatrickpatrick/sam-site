@@ -33,6 +33,7 @@ class FilteredImageGrid extends HTMLElement {
     images.forEach(image => {
       const img = document.createElement('img');
       img.src = `/img/${image.name}`
+      img.alt = image.alt
       this.shadowRoot.append(img)
     })
   }
