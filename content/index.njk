@@ -8,6 +8,7 @@ eleventyNavigation:
 <div>
   <tag-filter tags="{{ tags | dump }}" target="image-grid">
       {%- for tag in tags -%}
+        <!-- fallback if the script fails to load, JS disabled -->
         <a data-tag="{{ tag | dump }}" href="/images/{{ tag.tag }}">
           {{ tag.tag }}({{ tag.count }})
         </a>
@@ -15,8 +16,12 @@ eleventyNavigation:
   </tag-filter>
 
   <filtered-image-grid id="image-grid" data-filter="">
-    {%- for image in featuredImages -%}
-      <img alt="{{ image.alt }}" src="/img/{{ image.name }}" />
-    {%- endfor -%}
+    <link rel="stylesheet" href="/css/filteredImageGrid.css" />
+    <div class="image-grid">
+      <!-- fallback if the script fails to load, JS disabled -->
+      {%- for image in featuredImages -%}
+        <img alt="{{ image.alt }}" src="/img/{{ image.name }}" />
+      {%- endfor -%}
+    </div>
   </filtered-image-grid>
 </div>

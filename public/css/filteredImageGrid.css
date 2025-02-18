@@ -1,0 +1,11 @@
+.filter-image-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.filter-image-grid__image-container img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}

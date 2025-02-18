@@ -3,6 +3,13 @@ class FilteredImageGrid extends HTMLElement {
     super()
 
     this.root = this.attachShadow({ mode: 'open' })
+
+    this.shadowRoot.innerHTML = `
+      <div class="filter-image-grid"></div>
+      <link rel="stylesheet" href="/css/filteredImageGrid.css" />
+    `
+
+    this.gridDiv = this.shadowRoot.querySelector('.filter-image-grid');
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -28,13 +35,23 @@ class FilteredImageGrid extends HTMLElement {
   }
 
   createImages(images) {
-    this.shadowRoot.innerHTML = '';
+    this.gridDiv.innerHTML = ``;
 
     images.forEach(image => {
       const img = document.createElement('img');
       img.src = `/img/${image.name}`
       img.alt = image.alt
-      this.shadowRoot.append(img)
+
+      img.onload = () => {
+        const ratio = img.naturalWidth / img.naturalHeight;
+        img.style = `aspect-ratio: ${ratio};`
+      }
+
+      const imgDiv = document.createElement('div');
+      imgDiv.classList.add('filter-image-grid__image-container')
+      imgDiv.append(img);
+
+      this.gridDiv.append(imgDiv)
     })
   }
 }
